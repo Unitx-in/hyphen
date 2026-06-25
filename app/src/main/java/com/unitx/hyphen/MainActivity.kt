@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.ui.Modifier
 import com.unitx.hyphen.ui.theme.HyphenTheme
+import com.unitx.hyphen_kotlin.ResultUnit
 
 
 class MainActivity : ComponentActivity() {
@@ -22,6 +23,7 @@ class MainActivity : ComponentActivity() {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Surface(modifier = Modifier.padding(innerPadding)) {
                         LoggerTestScreen()
+                        ResultUnit.SuccessUnit("Success")
                     }
                 }
             }

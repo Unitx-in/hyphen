@@ -54,4 +54,5 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     implementation(project(":hyphen-android"))
+    implementation(project(":hyphen-kotlin"))
 }
