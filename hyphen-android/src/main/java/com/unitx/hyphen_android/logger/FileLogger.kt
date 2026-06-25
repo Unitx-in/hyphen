@@ -1,20 +1,15 @@
-package com.unitx.hyphen_android.main
+package com.unitx.hyphen_android.logger
 
 import android.content.Context
 import android.util.Log
-import com.unitx.hyphen_android.logger.LogEntry
-import com.unitx.hyphen_android.logger.LogFileManager
-import com.unitx.hyphen_android.logger.LogLevel
-import com.unitx.hyphen_android.logger.LogShareHelper
-import com.unitx.hyphen_android.logger.LogcatCapture
 
 /**
  * FileLogger — public singleton facade.
  *
  * Responsibilities delegated to:
- *  - [com.unitx.hyphen_android.logger.LogFileManager]   → file I/O, rotation, read, clear
- *  - [com.unitx.hyphen_android.logger.LogcatCapture]    → logcat stream capture
- *  - [com.unitx.hyphen_android.logger.LogShareHelper]   → share / open intents
+ *  - [LogFileManager]   → file I/O, rotation, read, clear
+ *  - [LogcatCapture]    → logcat stream capture
+ *  - [LogShareHelper]   → share / open intents
  *
  * Usage:
  * ```
