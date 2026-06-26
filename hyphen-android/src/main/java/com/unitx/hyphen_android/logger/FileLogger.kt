@@ -40,14 +40,14 @@ object FileLogger {
     /**
      * Must be called once before any other method — typically in [Application.onCreate].
      */
-    fun init(context: Context) {
+    fun init(context: Context, fileProviderAuthority: String = context.applicationContext.packageName + ".provider") {
         if (initialized) {
             Log.w("Hyphen-Logger", "FileLogger.init() called more than once — ignoring.")
             return
         }
         val appContext = context.applicationContext
         fileManager = LogFileManager(appContext)
-        shareHelper = LogShareHelper(appContext.packageName + ".provider")
+        shareHelper = LogShareHelper(fileProviderAuthority)
         logcatCapture = LogcatCapture(onLine = { fileManager.write(it) })
         initialized = true
         Log.i("Hyphen-Logger", "FileLogger initialized. Log file: ${fileManager.logFile.absolutePath}")

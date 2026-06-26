@@ -39,7 +39,7 @@ import kotlin.text.ifEmpty
 private const val TAG = "LoggerTest"
 
 fun startLogcatCapture(context: Context){
-    FileLogger.init(context)
+    FileLogger.init(context, "${context.packageName}.fileprovider")
     FileLogger.startLogcatCapture()
     FileLogger.i(TAG, "MainActivity created — logger ready")
 }
@@ -88,7 +88,7 @@ fun LoggerTestScreen() {
             listOf(
                 "Log DEBUG" to {
                     FileLogger.d(TAG, "Debug message fired")
-                    appendLine("[D] Debug message fired", Color(0xFF90CAF9))
+                    appendLine("Debug message fired", Color(0xFF90CAF9))
                 },
                 "Log INFO" to {
                     FileLogger.i(TAG, "Info message fired")
